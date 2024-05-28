@@ -69,7 +69,7 @@ namespace ColorShapes
                     new Point(sizeWidth, sizeHeight),
                     new Point(width, height)
                 };
-                t.DrawPolygon(pen, TrianglePoints);
+                triangleGraphs.DrawPolygon(pen, TrianglePoints);
             }
         }
 
