@@ -23,14 +23,24 @@ namespace ColorShapes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            th1 = new Thread(thread);
+            th1 = new Thread(threadred);
             th1.Start();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            th2 = new Thread(threadblue);
+            th2.Start();
         }
 
         public void threadred()
         {
             for (int i = 0; i < 100; i++)
             {
+                this.CreateGraphics().DrawRectangle(
+                    new Pen(Brushes.Red, 4),
+                    new Rectangle(new Random().Next(0, this.Width),
+                    new Random().Next(0, this.Height), 20, 20));
+
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Red!");
@@ -48,11 +58,6 @@ namespace ColorShapes
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Blue!");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
