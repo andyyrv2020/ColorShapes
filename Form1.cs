@@ -18,16 +18,16 @@ namespace ColorShapes
             InitializeComponent();
         }
 
-        Thread redThread;
-        Thread blueThread;
+        Thread rectangleThread;
+        Thread triangleThread;
         Random random;
 
-        private void redButton_Click(object sender, EventArgs e)
+        private void rectangleButton_Click(object sender, EventArgs e)
         {
-            redThread = new Thread(threadRed);
-            redThread.Start();
+            rectangleThread = new Thread(threadRectangle);
+            rectangleThread.Start();
         }
-        public void threadRed()
+        public void threadRectangle()
         {
             for (int i = 0; i < 100; i++)
             {
@@ -41,7 +41,7 @@ namespace ColorShapes
             MessageBox.Show("Completed Red!");
         }
 
-        private void blueButton_Click(object sender, EventArgs e)
+        private void triangleButton_Click(object sender, EventArgs e)
         {
             blueThread = new Thread(threadBlue);
             blueThread.Start();
