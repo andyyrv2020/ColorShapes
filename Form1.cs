@@ -33,7 +33,7 @@ namespace ColorShapes
             {
                 this.CreateGraphics().DrawRectangle(
                     new Pen(Brushes.Red, 4),
-                    new Rectangle(new Random().Next(0, this.Width),
+                    new Rectangle(random.Next(0, this.Width),
                     new Random().Next(0, this.Height), 20, 20));
 
                 Thread.Sleep(100);
