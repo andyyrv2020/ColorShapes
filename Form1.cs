@@ -23,6 +23,11 @@ namespace ColorShapes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            th1 = new Thread(thread);
+        }
+
+        public void thread()
+        {
             for (int i = 0; i < 100; i++)
             {
                 Thread.Sleep(100);
