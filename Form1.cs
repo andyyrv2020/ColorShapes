@@ -18,21 +18,16 @@ namespace ColorShapes
             InitializeComponent();
         }
 
-        Thread th1;
-        Thread th2;
+        Thread redThread;
+        Thread blueThread;
+        Random random;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void redButton_Click(object sender, EventArgs e)
         {
-            th1 = new Thread(threadred);
-            th1.Start();
+            redThread = new Thread(threadRed);
+            redThread.Start();
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            th2 = new Thread(threadblue);
-            th2.Start();
-        }
-
-        public void threadred()
+        public void threadRed()
         {
             for (int i = 0; i < 100; i++)
             {
@@ -46,18 +41,28 @@ namespace ColorShapes
             MessageBox.Show("Completed Red!");
         }
 
-        public void threadblue()
+        private void blueButton_Click(object sender, EventArgs e)
+        {
+            blueThread = new Thread(threadBlue);
+            blueThread.Start();
+        }
+        public void threadBlue()
         {
             for (int i = 0; i < 100; i++)
             {
                 this.CreateGraphics().DrawRectangle(
-                    new Pen(Brushes.Red, 4),
+                    new Pen(Brushes.Blue, 4),
                     new Rectangle(new Random().Next(0, this.Width),
                     new Random().Next(0, this.Height), 20, 20));
 
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Blue!");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            random = new Random();   
         }
     }
 }
