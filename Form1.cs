@@ -38,15 +38,15 @@ namespace ColorShapes
 
                 Thread.Sleep(100);
             }
-            MessageBox.Show("Completed Red!");
+            MessageBox.Show("Completed Rectangle!");
         }
 
         private void triangleButton_Click(object sender, EventArgs e)
         {
-            blueThread = new Thread(threadBlue);
-            blueThread.Start();
+            rectangleThread = new Thread(threadTriangle);
+            rectangleThread.Start();
         }
-        public void threadBlue()
+        public void threadTriangle()
         {
             for (int i = 0; i < 100; i++)
             {
@@ -57,7 +57,7 @@ namespace ColorShapes
 
                 Thread.Sleep(100);
             }
-            MessageBox.Show("Completed Blue!");
+            MessageBox.Show("Completed Rectangle!");
         }
 
         private void Form1_Load(object sender, EventArgs e)
