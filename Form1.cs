@@ -20,7 +20,11 @@ namespace ColorShapes
 
         Thread rectangleThread;
         Thread triangleThread;
+        Thread circleThread;
+
         Random random;
+
+        
 
         private void rectangleButton_Click(object sender, EventArgs e)
         {
@@ -50,6 +54,33 @@ namespace ColorShapes
         {
             for (int i = 0; i < 100; i++)
             {
+
+                int width = random.Next(0, 550);
+                int height = random.Next(0, 350);
+                Thread.Sleep(300);
+
+                Graphics triangleGraphs = this.CreateGraphics();
+                Pen pen = new Pen(Brushes.PaleGoldenrod);
+                int sizeHeight = height + random.Next(50, 50);
+                int sizeWidth = width + random.Next(50, 50);
+                Point[] TrianglePoints =
+{
+                    new Point(Math.Max(0, width - random.Next(50, 50)), height),
+                    new Point(sizeWidth, sizeHeight),
+                    new Point(width, height)
+                };
+                t.DrawPolygon(pen, TrianglePoints);
+            }
+        }
+
+        private void circleButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void threadCircle()
+        {
+            for (int i = 0; i < 100; i++)
+            {
                 this.CreateGraphics().DrawRectangle(
                     new Pen(Brushes.Blue, 4),
                     new Rectangle(random.Next(0, this.Width),
@@ -57,12 +88,14 @@ namespace ColorShapes
 
                 Thread.Sleep(100);
             }
-            MessageBox.Show("Completed Rectangle!");
+            MessageBox.Show("Completed Circle!");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             random = new Random();   
         }
+
+
     }
 }

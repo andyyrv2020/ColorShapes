@@ -30,6 +30,7 @@
         {
             this.rectangleButton = new System.Windows.Forms.Button();
             this.triangleButton = new System.Windows.Forms.Button();
+            this.circleButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rectangleButton
@@ -52,11 +53,22 @@
             this.triangleButton.UseVisualStyleBackColor = true;
             this.triangleButton.Click += new System.EventHandler(this.triangleButton_Click);
             // 
+            // circleButton
+            // 
+            this.circleButton.Location = new System.Drawing.Point(494, 209);
+            this.circleButton.Name = "circleButton";
+            this.circleButton.Size = new System.Drawing.Size(75, 23);
+            this.circleButton.TabIndex = 2;
+            this.circleButton.Text = "Circle";
+            this.circleButton.UseVisualStyleBackColor = true;
+            this.circleButton.Click += new System.EventHandler(this.circleButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 441);
+            this.Controls.Add(this.circleButton);
             this.Controls.Add(this.triangleButton);
             this.Controls.Add(this.rectangleButton);
             this.Name = "Form1";
@@ -70,6 +82,7 @@
 
         private System.Windows.Forms.Button rectangleButton;
         private System.Windows.Forms.Button triangleButton;
+        private System.Windows.Forms.Button circleButton;
     }
 }
 
