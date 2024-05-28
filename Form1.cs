@@ -64,7 +64,7 @@ namespace ColorShapes
                 int sizeHeight = height + random.Next(50, 50);
                 int sizeWidth = width + random.Next(50, 50);
                 Point[] TrianglePoints =
-{
+                {
                     new Point(Math.Max(0, width - random.Next(50, 50)), height),
                     new Point(sizeWidth, sizeHeight),
                     new Point(width, height)
