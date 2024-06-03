@@ -23,22 +23,27 @@ namespace ColorShapes
         Thread circleThread;
 
         Random random;
+        private Random rnd = new Random();
 
-        
+
 
         private void rectangleButton_Click(object sender, EventArgs e)
         {
             rectangleThread = new Thread(threadRectangle);
             rectangleThread.Start();
+                    Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            BackColor = randomColor;
         }
+
         public void threadRectangle()
         {
             for (int i = 0; i < 100; i++)
             {
-                int width = random.Next(0, 250);
-                int height = random.Next(0, 300);
-                this.CreateGraphics().DrawRectangle(
-                    new Pen(Brushes.Red, 3), width, height, 50, 50);
+                int width = rnd.Next(0, 250);
+                int height = rnd.Next(0, 300);
+                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                Pen randomPen = new Pen(new SolidBrush(randomColor), 3);
+                    this.CreateGraphics().DrawRectangle(randomPen, width, height, 50, 50);
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Rectangle!");
@@ -48,6 +53,9 @@ namespace ColorShapes
         {
             rectangleThread = new Thread(threadTriangle);
             rectangleThread.Start();
+
+            Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            BackColor = randomColor;
         }
         public void threadTriangle()
         {
@@ -56,18 +64,19 @@ namespace ColorShapes
 
                 int width = random.Next(0, 250);
                 int height = random.Next(0, 300);
+                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                Pen randomPen = new Pen(new SolidBrush(randomColor), 3);
                 Graphics triangleGraphs = this.CreateGraphics();
-                Pen pen = new Pen(Brushes.Purple, 3);
-                int sizeHeight = height + random.Next(50, 50);
-                int sizeWidth = width + random.Next(50, 50);
+                int sizeHeight = height + rnd.Next(50, 50);
+                int sizeWidth = width + rnd.Next(10, 10);
                 Point[] TrianglePoints =
                 {
-                    new Point(Math.Max(0, width - random.Next(50, 50)), height),
-                    new Point(sizeWidth, sizeHeight),
-                    new Point(width, height)
-                };
-                triangleGraphs.DrawPolygon(pen, TrianglePoints);
-                Thread.Sleep(100);
+                new Point(Math.Max(0, width - rnd.Next(50, 50)), height),
+                new Point(sizeWidth, sizeHeight),
+                new Point(width, height)
+            };
+                triangleGraphs.DrawPolygon(randomPen, TrianglePoints);
+                Thread.Sleep(1500);
             }
             MessageBox.Show("Completed Triangle!");
 
@@ -77,15 +86,18 @@ namespace ColorShapes
         {
             circleThread = new Thread(threadCircle);
             circleThread.Start();
+            Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            BackColor = randomColor;
         }
         public void threadCircle()
         {
             for (int i = 0; i < 100; i++)
             {
-                int width = random.Next(0, 250);
-                int height = random.Next(0, 300);
-                    this.CreateGraphics().DrawEllipse(
-                        new Pen(Brushes.HotPink, 3), width, height, 50, 50);
+                int width = rnd.Next(0, 250);
+                int height = rnd.Next(0, 300);
+                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                Pen randomPen = new Pen(new SolidBrush(randomColor), 3);
+                this.CreateGraphics().DrawEllipse(randomPen, width, height, 50, 50);
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Circle!");
