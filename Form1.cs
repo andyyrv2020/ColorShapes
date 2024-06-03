@@ -57,10 +57,8 @@ namespace ColorShapes
 
                 int width = random.Next(0, 550);
                 int height = random.Next(0, 350);
-                Thread.Sleep(300);
-
                 Graphics triangleGraphs = this.CreateGraphics();
-                Pen pen = new Pen(Brushes.PaleGoldenrod);
+                Pen pen = new Pen(Brushes.Purple);
                 int sizeHeight = height + random.Next(50, 50);
                 int sizeWidth = width + random.Next(50, 50);
                 Point[] TrianglePoints =
@@ -70,25 +68,28 @@ namespace ColorShapes
                     new Point(width, height)
                 };
                 triangleGraphs.DrawPolygon(pen, TrianglePoints);
+                Thread.Sleep(100);
             }
+            MessageBox.Show("Completed Triangle!");
+
         }
 
         private void circleButton_Click(object sender, EventArgs e)
         {
-
+            circleThread = new Thread(threadCircle);
+            circleThread.Start();
         }
         public void threadCircle()
         {
             for (int i = 0; i < 100; i++)
             {
-                this.CreateGraphics().DrawRectangle(
-                    new Pen(Brushes.Blue, 4),
-                    new Rectangle(random.Next(0, this.Width),
-                    new Random().Next(0, this.Height), 20, 20));
-
+                int width = random.Next(0, 550);
+                int height = random.Next(0, 300);
+                    this.CreateGraphics().DrawEllipse(new Pen(Brushes.Black), width, height, 50, 50);
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Circle!");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
