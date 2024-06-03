@@ -35,9 +35,9 @@
             // 
             // rectangleButton
             // 
-            this.rectangleButton.Location = new System.Drawing.Point(12, 406);
+            this.rectangleButton.Location = new System.Drawing.Point(12, 603);
             this.rectangleButton.Name = "rectangleButton";
-            this.rectangleButton.Size = new System.Drawing.Size(85, 25);
+            this.rectangleButton.Size = new System.Drawing.Size(244, 25);
             this.rectangleButton.TabIndex = 0;
             this.rectangleButton.Text = "Rectangle";
             this.rectangleButton.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // triangleButton
             // 
-            this.triangleButton.Location = new System.Drawing.Point(121, 406);
+            this.triangleButton.Location = new System.Drawing.Point(333, 603);
             this.triangleButton.Name = "triangleButton";
-            this.triangleButton.Size = new System.Drawing.Size(85, 25);
+            this.triangleButton.Size = new System.Drawing.Size(215, 25);
             this.triangleButton.TabIndex = 1;
             this.triangleButton.Text = "Triangle";
             this.triangleButton.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             // 
             // circleButton
             // 
-            this.circleButton.Location = new System.Drawing.Point(231, 406);
+            this.circleButton.Location = new System.Drawing.Point(628, 603);
             this.circleButton.Name = "circleButton";
-            this.circleButton.Size = new System.Drawing.Size(85, 25);
+            this.circleButton.Size = new System.Drawing.Size(244, 25);
             this.circleButton.TabIndex = 2;
             this.circleButton.Text = "Circle";
             this.circleButton.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 482);
+            this.ClientSize = new System.Drawing.Size(900, 703);
             this.ControlBox = false;
             this.Controls.Add(this.circleButton);
             this.Controls.Add(this.triangleButton);
