@@ -11,9 +11,9 @@ using System.Threading;
 
 namespace ColorShapes
 {
-    public partial class Form1 : Form
+    public partial class ColorShapes : Form
     {
-        public Form1()
+        public ColorShapes()
         {
             InitializeComponent();
         }
@@ -35,11 +35,10 @@ namespace ColorShapes
         {
             for (int i = 0; i < 100; i++)
             {
+                int width = random.Next(0, 250);
+                int height = random.Next(0, 300);
                 this.CreateGraphics().DrawRectangle(
-                    new Pen(Brushes.Red, 4),
-                    new Rectangle(random.Next(0, this.Width),
-                    new Random().Next(0, this.Height), 20, 20));
-
+                    new Pen(Brushes.Red, 3), width, height, 50, 50);
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Rectangle!");
@@ -55,10 +54,10 @@ namespace ColorShapes
             for (int i = 0; i < 100; i++)
             {
 
-                int width = random.Next(0, 550);
-                int height = random.Next(0, 350);
+                int width = random.Next(0, 250);
+                int height = random.Next(0, 300);
                 Graphics triangleGraphs = this.CreateGraphics();
-                Pen pen = new Pen(Brushes.Purple);
+                Pen pen = new Pen(Brushes.Purple, 3);
                 int sizeHeight = height + random.Next(50, 50);
                 int sizeWidth = width + random.Next(50, 50);
                 Point[] TrianglePoints =
@@ -83,16 +82,16 @@ namespace ColorShapes
         {
             for (int i = 0; i < 100; i++)
             {
-                int width = random.Next(0, 550);
+                int width = random.Next(0, 250);
                 int height = random.Next(0, 300);
-                    this.CreateGraphics().DrawEllipse(new Pen(Brushes.Black), width, height, 50, 50);
+                    this.CreateGraphics().DrawEllipse(
+                        new Pen(Brushes.HotPink, 3), width, height, 50, 50);
                 Thread.Sleep(100);
             }
             MessageBox.Show("Completed Circle!");
-
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ColorShapes_Load(object sender, EventArgs e)
         {
             random = new Random();   
         }
